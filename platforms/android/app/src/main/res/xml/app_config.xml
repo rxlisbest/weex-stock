@@ -6,6 +6,6 @@
     <preference name="loglevel" value="DEBUG" />
     <preference name="launch_locally" value="true"/>
     <preference name="launch_url" value="http://127.0.0.1:8080/dist/index.js"/>
-    <preference name="local_url" value="file://assets/dist/hello.js"/>
+    <preference name="local_url" value="file://assets/dist/index.js"/>
 
 </widget>

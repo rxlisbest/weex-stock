@@ -1,0 +1,4 @@
+#Fri Jan 25 10:47:11 CST 2019
+base.0=/Library/WebServer/Projects/weex/weex-baby/platforms/android/app/build/intermediates/transforms/dexMerger/debug/10
+path.0=classes.dex
+renamed.0=classes.dex

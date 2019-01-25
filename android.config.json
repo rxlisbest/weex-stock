@@ -2,5 +2,5 @@
   "AppName":"WeexApp",
   "AppId":"com.weex.app",
   "SplashText":"Hello\nWeex",
-  "WeexBundle":"hello.js"
+  "WeexBundle":"index.js"
 }

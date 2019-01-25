@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jan 25 12:30:14 CST 2019
+#Fri Jan 25 14:25:49 CST 2019
 3.set=ASSET
 3.path=dist/index.js
 2.base=/Library/WebServer/Projects/weex/weex-baby/platforms/android/app/build/intermediates/transforms/mergeJniLibs/debug/0

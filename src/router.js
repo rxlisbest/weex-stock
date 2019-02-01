@@ -8,8 +8,8 @@ export const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: require('@/pages/calendar/index.vue')
+      name: 'Index',
+      component: require('@/components/Index')
     },
     {
       path: '/calendar',

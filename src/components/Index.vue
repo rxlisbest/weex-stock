@@ -4,7 +4,7 @@
                title-type="icon"
                @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected">
     <!-- 第一个页面内容-->
-    <div class="item-container" :style="contentStyle"><text>首页</text></div>
+    <div class="item-container" :style="contentStyle"><hello-world></hello-world></div>
 
     <!-- 第二个页面内容-->
     <div class="item-container" :style="contentStyle"><text>特别推荐</text></div>
@@ -19,10 +19,12 @@
 
 <script>
 import { WxcTabBar, Utils } from 'weex-ui'
+import HelloWorld from './HelloWorld'
 import Config from '../config/bar.js'
 console.log(Config)
 export default {
-  components: { WxcTabBar },
+  name: 'index',
+  components: { WxcTabBar, HelloWorld },
   data: () => ({
     tabTitles: Config.tabTitles,
     tabStyles: Config.tabStyles

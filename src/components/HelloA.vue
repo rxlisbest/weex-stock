@@ -1,10 +1,10 @@
 <template>
-  <text class="message">Roy, let's use Vue.js to build your Weex app.</text>
+  <text class="message">{{ index }}</text>
 </template>
 
 <script>
 export default {
-  name: 'hello-world',
+  name: 'hello-a',
   components: { },
   props: [
     'index'
@@ -12,8 +12,8 @@ export default {
   data: () => ({
   }),
   created () {
-    if (this.index === 't') {
-      console.error(2)
+    if (this.index === 'hello-world') {
+      console.error(123)
     }
   },
   methods: {

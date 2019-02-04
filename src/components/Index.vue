@@ -2,12 +2,14 @@
   <wxc-tab-bar :tab-titles="tabTitles"
                :tab-styles="tabStyles"
                title-type="icon"
+               :is-tab-view="false"
+               ref="wxc-tab-bar"
                @wxcTabBarCurrentTabSelected="wxcTabBarCurrentTabSelected">
     <!-- 第一个页面内容-->
-    <div class="item-container" :style="contentStyle"><hello-world></hello-world></div>
+    <div class="item-container" :style="contentStyle"><hello-world index="t"></hello-world></div>
 
     <!-- 第二个页面内容-->
-    <div class="item-container" :style="contentStyle"><text>特别推荐</text></div>
+    <div class="item-container" :style="contentStyle"><hello-a index="hello-world"></hello-a></div>
 
     <!-- 第三个页面内容-->
     <div class="item-container" :style="contentStyle"><text>消息中心</text></div>
@@ -20,11 +22,12 @@
 <script>
 import { WxcTabBar, Utils } from 'weex-ui'
 import HelloWorld from './HelloWorld'
+import HelloA from './HelloA'
 import Config from '../config/bar.js'
 console.log(Config)
 export default {
   name: 'index',
-  components: { WxcTabBar, HelloWorld },
+  components: { WxcTabBar, HelloWorld, HelloA },
   data: () => ({
     tabTitles: Config.tabTitles,
     tabStyles: Config.tabStyles
@@ -36,8 +39,14 @@ export default {
     const { tabStyles } = this
     this.contentStyle = { height: (tabPageHeight - tabStyles.height) + 'px' }
   },
+  mounted () {
+    this.$refs['wxc-tab-bar'].setPage(2, null, false)
+  },
   methods: {
     wxcTabBarCurrentTabSelected (e) {
+      if (e.page === 1) {
+      }
+      console.log(e.page)
       // const index = e.page
       // console.log(index)
     }

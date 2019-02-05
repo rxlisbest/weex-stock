@@ -9,7 +9,7 @@
     <div class="item-container" :style="contentStyle"><hello-world index="t"></hello-world></div>
 
     <!-- 第二个页面内容-->
-    <div class="item-container" :style="contentStyle"><component :is="a" index="222"></component></div>
+    <div class="item-container" :style="contentStyle"><component v-if="aa" :is="a" :index="index"></component></div>
 
     <!-- 第三个页面内容-->
     <div class="item-container" :style="contentStyle"><text>消息中心</text></div>
@@ -22,6 +22,7 @@
 <script>
 import { WxcTabBar, Utils } from 'weex-ui'
 import HelloWorld from './HelloWorld'
+import HelloA from './HelloA'
 import Config from '../config/bar.js'
 console.log(Config)
 export default {
@@ -30,7 +31,9 @@ export default {
   data: () => ({
     tabTitles: Config.tabTitles,
     tabStyles: Config.tabStyles,
-    a: ''
+    a: '',
+    index: '123',
+    aa: true
   }),
   created () {
     const tabPageHeight = Utils.env.getPageHeight()
@@ -45,8 +48,13 @@ export default {
   methods: {
     wxcTabBarCurrentTabSelected (e) {
       if (e.page === 1) {
-        let HelloA = require('./HelloA')
+        // let HelloA = require('./HelloA')
+        this.aa = false
         this.a = HelloA
+        this.index = Math.random()
+        this.$nextTick(() => {
+          this.aa = true
+        })
       }
       console.log(e.page)
       // const index = e.page

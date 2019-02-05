@@ -17,7 +17,13 @@ export default {
       console.error(123)
     }
   },
+  mounted () {
+    console.error(666)
+  },
   methods: {
+  },
+  destroyed () {
+    console.error(2)
   }
 }
 </script>

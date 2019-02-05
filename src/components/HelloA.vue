@@ -12,6 +12,7 @@ export default {
   data: () => ({
   }),
   created () {
+    console.error(123)
     if (this.index === 'hello-world') {
       console.error(123)
     }

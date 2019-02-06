@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import Nat from 'natjs'
 export default {
   name: 'hello-a',
   components: { },
@@ -12,6 +13,7 @@ export default {
   data: () => ({
   }),
   created () {
+    Nat.call('415-736-0000')
     console.error(123)
     if (this.index === 'hello-world') {
       console.error(123)

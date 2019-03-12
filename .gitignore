@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.DS_Store
+yarn.lock
+.temp/
+*.apk
+.idea/
+*.log
+.gradle/
+platforms/android/app/build/

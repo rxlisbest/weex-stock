@@ -7,8 +7,8 @@
                    :left-button="false"
                    ></wxc-minibar>
     </div>
-    <div>
-      <image class="login-logo" src="file:///android_asset/images/rxl.png"></image>
+    <div class="login-logo">
+      <image class="login-logo-image" :src="getImgPath('logo.png')"></image>
     </div>
     <div class="login-form">
       <wxc-cell :label="$t('messages.login.form.username')"
@@ -19,59 +19,64 @@
       <wxc-cell :label="$t('messages.login.form.password')"
                 :has-arrow="false"
                 :has-top-border="true">
-        <input slot="title" type="text" :value="form.password" ></input>
+        <input slot="title" type="password" :value="form.password" ></input>
       </wxc-cell>
     </div>
     <div class="login-button">
-      <wxc-button @wxcButtonClicked="submitForm" class="login-button-submit" type="blue" :text="$t('messages.button.submit')"></wxc-button>
+      <wxc-button @wxcButtonClicked="submitForm" class="login-button-submit" type="blue" :text="$t('messages.button.login')"></wxc-button>
     </div>
   </div>
 </template>
 
 <script>
-  import { WxcMinibar } from 'weex-ui';
-  import { WxcCell } from 'weex-ui';
-  import { WxcButton } from 'weex-ui';
+import { WxcMinibar } from 'weex-ui'
+import { WxcCell } from 'weex-ui'
+import { WxcButton } from 'weex-ui'
 
-  export default {
-    components: { 
-      WxcCell,
-      WxcMinibar,
-      WxcButton,
-    },
-    created () {
+export default {
+  components: { 
+    WxcCell,
+    WxcMinibar,
+    WxcButton,
+  },
+  created () {
 
-    },
-    data () {
-      return {
-        form: {
-          username: '',
-          password: ''
-        }
-      }
-    },
-    methods: {
-      wxcCellClicked (e) {
-        console.log(e)
-      },
-      submitForm () {
-        console.log(2)
+  },
+  data () {
+    return {
+      form: {
+        username: '',
+        password: ''
       }
     }
-  };
+  },
+  methods: {
+    wxcCellClicked (e) {
+      console.log(e)
+    },
+    submitForm () {
+      console.log(2)
+    }
+  }
+};
 </script>
 <style scoped>
   .login-logo {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    width: 100px;
-    height: 50px;
+    margin-top: 120px;
+    margin-bottom: 80px;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .login-logo-image {
+    width: 500px;
+    height: 180px;
+    align-items: center;
   }
   .login-button {
-    text-align: center;
-    margin-top: 0.8rem;
+    margin-top: 60px;
+    justify-content: center;
+    flex-direction: row;
   }
   .login-button-submit {
-    margin: 0 auto;
   }
 </style>

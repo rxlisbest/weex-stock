@@ -15,6 +15,11 @@ const i18n = new VueI18n({
     'en-US': require('@/common/lang/en.js')    // 英文语言包
   }
 })
+
+import mixins from '@/mixins'
+// register global mixins.
+Vue.mixin(mixins)
+
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({el: '#root', i18n, router}, App));
 router.push('/');
